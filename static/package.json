@@ -1,0 +1,16 @@
+{
+  "name": "css-to-object",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "license": "MIT",
+  "author": {
+    "name": "Дмитрий Сединкин",
+    "url": "https://github.com/dsedinkin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dsedinkin/css-to-object.git"
+  }
+}
