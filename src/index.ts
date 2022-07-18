@@ -1,7 +1,7 @@
 import { compile } from "stylis";
 import { TOpts, TRule, TRules } from "./type";
 
-const parseUnit = (value: string, returnValue: boolean = true, returnUnit: boolean = false) => {
+export const parseUnit = (value: string, returnValue: boolean = true, returnUnit: boolean = false) => {
     const match = value.match(/^(0?[-.]?\d+)(r?e[m|x]|v[h|w|min|max]+|p[x|t|c]|[c|m]m|%|s|in|ch)$/);
     const res = match
         ? { value: (parseFloat(match[1]) || match[1]), unit: match[2] }
@@ -32,7 +32,7 @@ const parse = (opts: TOpts) => (rules: TRules, result: { [key: string]: any } = 
     return result;
 }
 
-const cssToObject = (css: string, opts: TOpts) => {
+export const cssToObject = (css: string, opts: TOpts) => {
     try {
         const wrapped = compile(css);
         const obj = parse(opts)(wrapped);
@@ -42,5 +42,3 @@ const cssToObject = (css: string, opts: TOpts) => {
         return {};
     }
 }
-
-export default cssToObject;

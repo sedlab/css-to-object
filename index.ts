@@ -1,4 +1,4 @@
-import cssToObject from "./dist";
+import { cssToObject } from "./dist";
 
 const css = `
     height: 800px;

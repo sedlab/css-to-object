@@ -1,4 +1,4 @@
-import cssToObject from "./index";
+import { cssToObject } from "./index";
 
 test("cssToObject", () => {
     expect(cssToObject("height: 800px;", { numbers: false })).toEqual({ height: "800px" });
