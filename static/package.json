@@ -1,6 +1,6 @@
 {
   "name": "css-to-object",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -12,5 +12,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dsedinkin/css-to-object.git"
+  },
+  "dependencies": {
+    "@types/stylis": "4.0.2",
+    "stylis": "4.1.1"
   }
 }

@@ -10,7 +10,7 @@
   "scripts": {
     "build": "yarn test && tsc && cp -r static/* ./dist",
     "start": "yarn build && cross-env NODE_PATH=./dist nodemon",
-    "release": "git subtree push --prefix dist git@github.com:dsedinkin/css-to-object.git release",
+    "release": "yarn build && git subtree push --prefix dist git@github.com:dsedinkin/css-to-object.git release",
     "test": "jest --config jest.config.json"
   },
   "nodemonConfig": {
@@ -32,7 +32,7 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "@types/stylis": "^4.0.2",
-    "stylis": "^4.1.1"
+    "@types/stylis": "4.0.2",
+    "stylis": "4.1.1"
   }
 }
