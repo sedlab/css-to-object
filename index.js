@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.cssToObject = exports.parseUnit = void 0;
 const stylis_1 = require("stylis");
 const parseUnit = (value, returnValue = true, returnUnit = false) => {
     const match = value.match(/^(0?[-.]?\d+)(r?e[m|x]|v[h|w|min|max]+|p[x|t|c]|[c|m]m|%|s|in|ch)$/);
@@ -8,6 +9,7 @@ const parseUnit = (value, returnValue = true, returnUnit = false) => {
         : { value, unit: undefined };
     return returnValue ? res.value : returnUnit ? res.unit : res;
 };
+exports.parseUnit = parseUnit;
 const parse = (opts) => (rules, result = {}) => {
     rules.forEach((rule) => {
         if (Array.isArray(rule.children)) {
@@ -24,9 +26,9 @@ const parse = (opts) => (rules, result = {}) => {
             const key = rule.props;
             const value = rule.children;
             if (Object.keys(result).includes(key))
-                Object.assign(result[key], opts?.numbers ? parseUnit(value) : value);
+                Object.assign(result[key], opts?.numbers ? (0, exports.parseUnit)(value) : value);
             else
-                Object.assign(result, { [key]: opts?.numbers ? parseUnit(value) : value });
+                Object.assign(result, { [key]: opts?.numbers ? (0, exports.parseUnit)(value) : value });
         }
     });
     return result;
@@ -42,4 +44,4 @@ const cssToObject = (css, opts) => {
         return {};
     }
 };
-exports.default = cssToObject;
+exports.cssToObject = cssToObject;
