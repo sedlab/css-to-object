@@ -26,7 +26,7 @@ const parse = (opts) => (rules, result = {}) => {
             const key = rule.props;
             const value = rule.children;
             if (Object.keys(result).includes(key))
-                Object.assign(result[key], opts?.numbers ? (0, exports.parseUnit)(value) : value);
+                Object.assign({ ...result[key] }, opts?.numbers ? (0, exports.parseUnit)(value) : value);
             else
                 Object.assign(result, { [key]: opts?.numbers ? (0, exports.parseUnit)(value) : value });
         }
