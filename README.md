@@ -3,8 +3,14 @@
 Библиотека для конвертирования CSS в объект JS.
 
 ## Установка
-`npm i -s dsedinkin/css-to-object#latest` или `yarn add dsedinkin/css-to-object#latest`
+> YARN
 
+	yarn add dsedinkin/css-to-object#latest
+> NPM
+
+	npm i -s dsedinkin/css-to-object#latest
+
+## Использование
 
 > **es6**
 
@@ -14,22 +20,22 @@ import { cssToObject } from "css-to-object";
 cssToObject(`
     height: 800px;
     background-color: #f6f4e6;
-    #1233 .class-name{
+    #1233 .class-name {
         height: 800px;
         background-color: #f6f4e6;
     }
-    @media screen and (max-width: 1199px){
-        #1233 .class-name{
+    @media screen and (max-width: 1199px) {
+        #1233 .class-name {
             height: 800px;
             background-color: #f6f4e6;
         }
     }
-    @media screen and (max-width: 1199px){
-        #1234 .class-name{
+    @media screen and (max-width: 1199px) {
+        #1234 .class-name {
             height: 800px;
             background-color: #f6f4e6;
         }
-        #1234 .class-name{
+        #1234 .class-name {
             width: 100%;
         }
     }
@@ -56,22 +62,22 @@ const { cssToObject } = require("css-to-object");
 cssToObject(`
     height: 800px;
     background-color: #f6f4e6;
-    #1233 .class-name{
+    #1233 .class-name {
         height: 800px;
         background-color: #f6f4e6;
     }
-    @media screen and (max-width: 1199px){
-        #1233 .class-name{
+    @media screen and (max-width: 1199px) {
+        #1233 .class-name {
             height: 800px;
             background-color: #f6f4e6;
         }
     }
-    @media screen and (max-width: 1199px){
-        #1234 .class-name{
+    @media screen and (max-width: 1199px) {
+        #1234 .class-name {
             height: 800px;
             background-color: #f6f4e6;
         }
-        #1234 .class-name{
+        #1234 .class-name {
             width: 100%;
         }
     }
