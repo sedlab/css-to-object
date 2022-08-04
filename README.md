@@ -48,7 +48,7 @@ cssToObject(`
 `, { numbers: true });
 ```
 
-### Результат
+Результат:
 
 ```JSON
 {
