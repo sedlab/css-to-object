@@ -3,12 +3,8 @@
 Библиотека для конвертирования CSS в объект JS.
 
 ## Установка
-> YARN
 
-	yarn add dsedinkin/css-to-object#latest
-> NPM
-
-	npm i -s dsedinkin/css-to-object#latest
+`npm i -s dsedinkin/css-to-object#latest` или `yarn add dsedinkin/css-to-object#latest`
 
 ## Использование
 
