@@ -56,12 +56,12 @@ cssToObject(`
 
 ```JSON
 {
-  height: 800,
-  'background-color': '#f6f4e6',
-  '#1233 .class-name': { height: 800, 'background-color': '#f6f4e6' },
-  '@media screen and (max-width: 1199px)': {
-    '#1233 .class-name': { height: 800, 'background-color': '#f6f4e6' },
-    '#1234 .class-name': { height: 800, 'background-color': '#f6f4e6', width: 100 }
+  "height": 800,
+  "background-color": "#f6f4e6",
+  "#1233 .class-name": { "height": 800, "background-color": "#f6f4e6" },
+  "@media screen and (max-width: 1199px)": {
+    "#1233 .class-name": { "height": 800, "background-color": "#f6f4e6" },
+    "#1234 .class-name": { "height": 800, "background-color": "#f6f4e6", "width": 100 }
   }
 }
 ```
