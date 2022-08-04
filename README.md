@@ -12,53 +12,21 @@
 
 ## Использование
 
-> **es6**
+> ES6
 
-```ts
+```js
 import { cssToObject } from "css-to-object";
-
-cssToObject(`
-    height: 800px;
-    background-color: #f6f4e6;
-    #1233 .class-name {
-        height: 800px;
-        background-color: #f6f4e6;
-    }
-    @media screen and (max-width: 1199px) {
-        #1233 .class-name {
-            height: 800px;
-            background-color: #f6f4e6;
-        }
-    }
-    @media screen and (max-width: 1199px) {
-        #1234 .class-name {
-            height: 800px;
-            background-color: #f6f4e6;
-        }
-        #1234 .class-name {
-            width: 100%;
-        }
-    }
-`, { numbers: true });
-/*
-{
-  height: 800,
-  'background-color': '#f6f4e6',
-  '#1233 .class-name': { height: 800, 'background-color': '#f6f4e6' },
-  '@media screen and (max-width: 1199px)': {
-    '#1233 .class-name': { height: 800, 'background-color': '#f6f4e6' },
-    '#1234 .class-name': { height: 800, 'background-color': '#f6f4e6', width: 100 }
-  }
-}
-*/
-
 ```
 
-> **es5**
+> ES5
 
 ```js
 const { cssToObject } = require("css-to-object");
+```
 
+## Пример
+
+```js
 cssToObject(`
     height: 800px;
     background-color: #f6f4e6;
@@ -82,7 +50,11 @@ cssToObject(`
         }
     }
 `, { numbers: true });
-/*
+```
+
+### Результат
+
+```JSON
 {
   height: 800,
   'background-color': '#f6f4e6',
@@ -92,5 +64,4 @@ cssToObject(`
     '#1234 .class-name': { height: 800, 'background-color': '#f6f4e6', width: 100 }
   }
 }
-*/
 ```
