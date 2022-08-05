@@ -45,48 +45,6 @@ cssToObject(`
             width: 100%;
         }
     }
-`, { numbers: true });
-```
-
-Результат:
-
-```JSON
-{
-  "height": 800,
-  "background-color": "#f6f4e6",
-  "#1233 .class-name": { "height": 800, "background-color": "#f6f4e6" },
-  "@media screen and (max-width: 1199px)": {
-    "#1233 .class-name": { "height": 800, "background-color": "#f6f4e6" },
-    "#1234 .class-name": { "height": 800, "background-color": "#f6f4e6", "width": 100 }
-  }
-}
-```
-
-## Пример
-
-```js
-cssToObject(`
-    height: 800px;
-    background-color: #f6f4e6;
-    #1233 .class-name {
-        height: 800px;
-        background-color: #f6f4e6;
-    }
-    @media screen and (max-width: 1199px) {
-        #1233 .class-name {
-            height: 800px;
-            background-color: #f6f4e6;
-        }
-    }
-    @media screen and (max-width: 1199px) {
-        #1234 .class-name {
-            height: 800px;
-            background-color: #f6f4e6;
-        }
-        #1234 .class-name {
-            width: 100%;
-        }
-    }
 `, { numbers: true, camel: true });
 ```
 
