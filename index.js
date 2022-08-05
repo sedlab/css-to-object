@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.cssToObject = exports.parseUnit = void 0;
+exports.cssToObject = void 0;
 const stylis_1 = require("stylis");
 const parseUnit = (value, returnValue = true, returnUnit = false) => {
     const match = value.match(/^(0?[-.]?\d+)(r?e[m|x]|v[h|w|min|max]+|p[x|t|c]|[c|m]m|%|s|in|ch)$/);
@@ -9,7 +9,9 @@ const parseUnit = (value, returnValue = true, returnUnit = false) => {
         : { value, unit: undefined };
     return returnValue ? res.value : returnUnit ? res.unit : res;
 };
-exports.parseUnit = parseUnit;
+const parseToCamel = (value) => value
+    .replace(/(-[a-z])/g, x => x.toUpperCase())
+    .replace(/-/g, '');
 const parse = (opts) => (rules, result = {}) => {
     rules.forEach((rule) => {
         if (Array.isArray(rule.children)) {
@@ -23,12 +25,12 @@ const parse = (opts) => (rules, result = {}) => {
                 result[key] = value;
         }
         else {
-            const key = rule.props;
-            const value = rule.children;
+            const key = opts?.camel ? parseToCamel(rule.props) : rule.props;
+            const value = opts?.numbers ? parseUnit(rule.children) : rule.children;
             if (Object.keys(result).includes(key))
-                Object.assign({ ...result[key] }, opts?.numbers ? (0, exports.parseUnit)(value) : value);
+                Object.assign({ ...result[key] }, value);
             else
-                Object.assign(result, { [key]: opts?.numbers ? (0, exports.parseUnit)(value) : value });
+                Object.assign(result, { [key]: value });
         }
     });
     return result;
