@@ -24,4 +24,4 @@ const css = `
     }
 `;
 
-console.log(cssToObject(css, { numbers: true }));
+console.log(cssToObject(css, { numbers: true, camel: true }));

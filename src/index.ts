@@ -1,13 +1,17 @@
 import { compile } from "stylis";
 import { TOpts, TRule, TRules } from "./type";
 
-export const parseUnit = (value: string, returnValue: boolean = true, returnUnit: boolean = false) => {
+const parseUnit = (value: string, returnValue: boolean = true, returnUnit: boolean = false) => {
     const match = value.match(/^(0?[-.]?\d+)(r?e[m|x]|v[h|w|min|max]+|p[x|t|c]|[c|m]m|%|s|in|ch)$/);
     const res = match
         ? { value: (parseFloat(match[1]) || match[1]), unit: match[2] }
         : { value, unit: undefined };
     return returnValue ? res.value : returnUnit ? res.unit : res;
 };
+
+const parseToCamel = (value: string) => value
+  .replace(/(-[a-z])/g, x => x.toUpperCase())
+  .replace(/-/g, '');
 
 const parse = (opts: TOpts) => (rules: TRules, result: { [key: string]: any } = {}) => {
     rules.forEach((rule: TRule) => {
@@ -21,12 +25,12 @@ const parse = (opts: TOpts) => (rules: TRules, result: { [key: string]: any } = 
             else
                 result[key] = value;
         } else {
-            const key = rule.props;
-            const value = rule.children;
+            const key = opts?.camel ? parseToCamel(rule.props) : rule.props;
+            const value = opts?.numbers ? parseUnit(rule.children) : rule.children;
             if (Object.keys(result).includes(key))
-                Object.assign({ ...result[key] }, opts?.numbers ? parseUnit(value) : value);
+                Object.assign({ ...result[key] }, value);
             else
-                Object.assign(result, { [key]: opts?.numbers ? parseUnit(value) : value });
+                Object.assign(result, { [key]: value });
         }
     });
     return result;
