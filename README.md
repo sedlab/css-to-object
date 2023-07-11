@@ -4,7 +4,7 @@
 
 ## Установка
 
-`npm i -s dsedinkin/css-to-object#latest` или `yarn add dsedinkin/css-to-object#latest`
+`npm install sedlab/css-to-object#latest --save` или `yarn add sedlab/css-to-object#latest`
 
 ## Использование
 
