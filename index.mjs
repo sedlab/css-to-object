@@ -1,6 +1,4 @@
-'use strict';
-
-var stylis = require('stylis');
+import { compile } from 'stylis';
 
 const parseUnit = (value, returnValue = true, returnUnit = false) => {
   const match = value.match(/^(0?[-.]?\d+)(r?e[m|x]|v[h|w|min|max]+|p[x|t|c]|[c|m]m|%|s|in|ch)$/);
@@ -35,7 +33,7 @@ const parse = (opts) => (rules, result = {}) => {
 };
 const cssToObject = (css, opts) => {
   try {
-    const wrapped = stylis.compile(css);
+    const wrapped = compile(css);
     const obj = parse(opts)(wrapped);
     return obj;
   } catch (err) {
@@ -44,4 +42,4 @@ const cssToObject = (css, opts) => {
   }
 };
 
-exports.cssToObject = cssToObject;
+export { cssToObject };

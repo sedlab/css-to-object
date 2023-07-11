@@ -1,4 +1,8 @@
-import { TOpts } from "./type";
-export declare const cssToObject: (css: string, opts: TOpts) => {
-    [key: string]: any;
-};
+type TOpts = {
+    numbers?: boolean;
+    camel?: boolean;
+} | null;
+
+declare const cssToObject: (css: string, opts: TOpts) => Record<string, any>;
+
+export { cssToObject };

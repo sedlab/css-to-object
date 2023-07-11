@@ -1,17 +1,17 @@
 {
   "name": "css-to-object",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "main": "./index.js",
   "types": "./index.d.ts",
   "license": "MIT",
   "author": {
-    "name": "Дмитрий Сединкин",
-    "url": "https://github.com/dsedinkin"
+    "name": "SedLab",
+    "url": "https://github.com/sedlab"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dsedinkin/css-to-object.git"
+    "url": "git+https://github.com/sedlab/css-to-object.git"
   },
   "dependencies": {
     "@types/stylis": "4.0.2",
