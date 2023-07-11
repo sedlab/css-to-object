@@ -24,27 +24,27 @@ const { cssToObject } = require("css-to-object");
 
 ```js
 cssToObject(`
+  height: 800px;
+  background-color: #f6f4e6;
+  #1233 .class-name {
     height: 800px;
     background-color: #f6f4e6;
+  }
+  @media screen and (max-width: 1199px) {
     #1233 .class-name {
-        height: 800px;
-        background-color: #f6f4e6;
+      height: 800px;
+      background-color: #f6f4e6;
     }
-    @media screen and (max-width: 1199px) {
-        #1233 .class-name {
-            height: 800px;
-            background-color: #f6f4e6;
-        }
+  }
+  @media screen and (max-width: 1199px) {
+    #1234 .class-name {
+      height: 800px;
+      background-color: #f6f4e6;
     }
-    @media screen and (max-width: 1199px) {
-        #1234 .class-name {
-            height: 800px;
-            background-color: #f6f4e6;
-        }
-        #1234 .class-name {
-            width: 100%;
-        }
+    #1234 .class-name {
+      width: 100%;
     }
+  }
 `, { numbers: true, camel: true });
 ```
 
