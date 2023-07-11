@@ -8,7 +8,7 @@
     "copy:linux": "cp -r static/* ./dist",
     "build": "yarn prebuild && rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript && yarn copy",
     "start": "ts-node --project tsconfig.node.json -r tsconfig-paths/register index.ts",
-    "release": "git subtree push --prefix dist https://github.com/sedlab/tilda release"
+    "release": "git subtree push --prefix dist https://github.com/sedlab/css-to-object release"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.2",
